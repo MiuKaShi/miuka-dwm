@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
-#define BROWSER "firefox"
+#define BROWSER "qutebrowser"
 
 /* appearance */
 static unsigned int borderpx = 4;               /* border pixel of windows */
