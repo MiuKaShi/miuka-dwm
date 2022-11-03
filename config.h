@@ -57,18 +57,19 @@ static const Rule rules[] = {
      *  WM_NAME(STRING) = title
      */
     /* class    instance      title          tags mask    isfloating   isterminal  noswallow  monitor */
-    {"flameshot", NULL,     NULL,           0,        1, 0, 1, -1 },
-    {"Ulauncher", NULL,     NULL,           0,        1, 0, 1, -1 },
-    {"ulauncher", NULL,     "",             0,        1, 0, 1, -1 },
-    {"Zoom",      NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"Gimp",      NULL,     NULL,           1 << 8,   0, 0, 0, -1 },
-    {"MATLAB",    NULL,     NULL,           1 << 8,   1, 0, 0, -1 },
-    {NULL,        NULL,     "兰译",         0,        1, 0, 1, -1 },
-    {TERMCLASS,   NULL,     NULL,           0,        0, 1, 0, -1 },
-    {TERMCLASS,   "bg",     NULL,           1 << 7,   0, 1, 0, -1 },
-    {TERMCLASS,   "spterm", NULL,           SPTAG(0), 1, 1, 0, -1 },
-    {TERMCLASS,   "spcalc", NULL,           SPTAG(1), 1, 1, 0, -1 },
-    {NULL,        NULL,     "Event Tester", 0,        0, 0, 1, -1 },
+    {"flameshot",       NULL,     NULL,           0,        1, 0, 1, -1 },
+    {"Ulauncher",       NULL,     NULL,           0,        1, 0, 1, -1 },
+    {"ulauncher",       NULL,     "",             0,        1, 0, 1, -1 },
+    {"Zoom",            NULL,     NULL,           0,        1, 0, 0, -1 },
+    {"Gimp",            NULL,     NULL,           1 << 8,   0, 0, 0, -1 },
+    {"MATLAB",          NULL,     NULL,           1 << 8,   1, 0, 0, -1 },
+    {NULL,              NULL,     "兰译",         0,        1, 0, 1, -1 },
+    {"TelegramDesktop", NULL,     NULL,           0,        1, 0, 1, -1 },
+    {TERMCLASS,         NULL,     NULL,           0,        0, 1, 0, -1 },
+    {TERMCLASS,         "bg",     NULL,           1 << 7,   0, 1, 0, -1 },
+    {TERMCLASS,         "spterm", NULL,           SPTAG(0), 1, 1, 0, -1 },
+    {TERMCLASS,         "spcalc", NULL,           SPTAG(1), 1, 1, 0, -1 },
+    {NULL,              NULL,     "Event Tester", 0,        0, 0, 1, -1 },
 };
 
 /* layout(s) */
@@ -167,9 +168,9 @@ static Key keys[] = {
     { MODKEY,             XK_0,            view,       { .ui = ~0 }},
     { MODKEY | ShiftMask, XK_0,            tag,        { .ui = ~0 }},
     { MODKEY,             XK_minus,        spawn,      { .v = (const char*[]) { "changevolume", "down", NULL }} },
-    { MODKEY | ShiftMask, XK_minus,        spawn,      { .v = (const char*[]) { "setbgt", "down", NULL }} },
+    { MODKEY | ShiftMask, XK_minus,        spawn,      { .v = (const char*[]) { "brightness", "down", NULL }} },
     { MODKEY,             XK_equal,        spawn,      { .v = (const char*[]) { "changevolume", "up", NULL }} },
-    { MODKEY | ShiftMask, XK_equal,        spawn,      { .v = (const char*[]) { "setbgt", "up", NULL }} },
+    { MODKEY | ShiftMask, XK_equal,        spawn,      { .v = (const char*[]) { "brightness", "up", NULL }} },
     { MODKEY,             XK_BackSpace,    spawn,      { .v = (const char*[]) { "sysact", NULL }}},
     { MODKEY | ShiftMask, XK_BackSpace,    spawn,      { .v = (const char*[]) { "sysact", NULL }}},
     { MODKEY,             XK_Tab,          view,       { 0 }},
