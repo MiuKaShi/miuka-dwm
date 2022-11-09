@@ -60,6 +60,7 @@ static const Rule rules[] = {
     {"flameshot",       NULL,     NULL,           0,        1, 0, 1, -1 },
     {"Ulauncher",       NULL,     NULL,           0,        1, 0, 1, -1 },
     {"ulauncher",       NULL,     "",             0,        1, 0, 1, -1 },
+    {"wemeetapp",       NULL,     NULL,           0,        1, 0, 1, -1 },
     {"Zoom",            NULL,     NULL,           0,        1, 0, 0, -1 },
     {"Gimp",            NULL,     NULL,           1 << 8,   0, 0, 0, -1 },
     {"MATLAB",          NULL,     NULL,           1 << 8,   1, 0, 0, -1 },
