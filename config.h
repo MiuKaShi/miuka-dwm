@@ -23,7 +23,7 @@ static int swallowfloating = 0;                 /* 1 means swallow floating wind
 static int smartgaps = 0;                       /* 1 means no outer gap when there is only one window */
 static int showbar = 1;                         /* 0 means no bar */
 static int topbar = 1;                          /* 0 means bottom bar */
-static char *fonts[] = { "monospace:size=12", "WenQuanYi Zen Hei Mono:size=12:type=Regular:antialias=true:autohint=true", "JoyPixels:pixelsize=20:antialias=true:autohint=true" };
+static char *fonts[] = { "monospace:size=12", "WenQuanYi Zen Hei Mono:size=12:type=Regular:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=22:antialias=true:autohint=true" };
 static char normbgcolor[] = "#282828";
 static char normbordercolor[] = "#504945";
 static char normfgcolor[] = "#bdae93";
