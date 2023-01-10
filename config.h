@@ -58,6 +58,7 @@ static const Rule rules[] = {
      */
     /* class    instance      title          tags mask    isfloating   isterminal  noswallow  monitor */
     {"flameshot",       NULL,     NULL,           0,        1, 0, 1, -1 },
+    {"Espanso",         NULL,     NULL,           0,        1, 0, 1, -1 },
     {"Ulauncher",       NULL,     NULL,           0,        1, 0, 1, -1 },
     {"ulauncher",       NULL,     "",             0,        1, 0, 1, -1 },
     {"wemeetapp",       NULL,     NULL,           0,        1, 0, 1, -1 },
