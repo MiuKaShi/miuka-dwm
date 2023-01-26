@@ -238,7 +238,9 @@ static Key keys[] = {
     /* V is automatically bound above in STACKKEYS */
     { MODKEY,             XK_b,          togglebar,       { 0 } },
     { MODKEY | ShiftMask, XK_b,          spawn,      SHCMD("rofi -show menu -theme $HOME/.config/rofi/themes/spotlight.rasi -modi menu:$HOME/.config/script/rofi-server.sh") },
-    { MODKEY,             XK_n,          spawn,     {.v = (const char*[]) { "r-note", NULL } } },
+    // { MODKEY,             XK_n,          spawn,     {.v = (const char*[]) { "r-note", NULL } } },
+    { MODKEY,             XK_n,          spawn,     {.v = (const char*[]) { TERMINAL, "-e", "nvim", "+ObsidianSearch", NULL } } },
+    { MODKEY,             XK_m,          spawn,     {.v = (const char*[]) { TERMINAL, "-e", "ncmpcpp", NULL } } },
     { MODKEY | ShiftMask, XK_n,          spawn,     SHCMD(TERMINAL " -e newsboat; pkill -RTMIN+6 dwmblocks") },
     { MODKEY,             XK_m,          spawn,     {.v = (const char*[]) { TERMINAL, "-e", "ncmpcpp", NULL } } },
     { MODKEY | ShiftMask, XK_m,          spawn,     SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
