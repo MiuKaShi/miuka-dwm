@@ -65,7 +65,7 @@ static const Rule rules[] = {
     {"Zoom",            NULL,     NULL,           0,        1, 0, 0, -1 },
     {"Gimp",            NULL,     NULL,           1 << 8,   0, 0, 0, -1 },
     {"MATLAB",          NULL,     NULL,           1 << 8,   1, 0, 0, -1 },
-    {NULL,              NULL,     "兰译",         0,        1, 0, 1, -1 },
+    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0, 1, 0, 1, -1 },
     {"TelegramDesktop", NULL,     NULL,           0,        1, 0, 0, -1 },
     {"telegram-desktop",NULL,     NULL,           0,        1, 0, 0, -1 },
     {TERMCLASS,         NULL,     NULL,           0,        0, 1, 0, -1 },
