@@ -63,8 +63,9 @@ static const Rule rules[] = {
     {"ulauncher",       NULL,     "",             0,        1, 0, 1, -1 },
     {"wemeetapp",       NULL,     NULL,           0,        1, 0, 1, -1 },
     {"Zoom",            NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"Gimp",            NULL,     NULL,           1 << 8,   0, 0, 0, -1 },
+    {"Gimp",            NULL,     NULL,           0,        1, 0, 0, -1 },
     {"MATLAB",          NULL,     NULL,           0,        1, 0, 0, -1 },
+    {"ij-ImageJ",       NULL,     NULL,           0,        1, 0, 0, -1 },
     {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0, 1, 0, 1, -1 },
     {NULL,              NULL,     "兰译",         0,        1, 0, 1, -1 },
     {"TelegramDesktop", NULL,     NULL,           0,        1, 0, 0, -1 },
@@ -80,6 +81,7 @@ static const Rule rules[] = {
 static float mfact = 0.55;      /* factor of master area size [0.05..0.95] */
 static int nmaster = 1;         /* number of clients in master area */
 static int resizehints = 0;     /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 #define FORCE_VSPLIT 1          /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 static const Layout layouts[] = {
@@ -151,7 +153,7 @@ ResourcePref resources[] = {
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
 
-static Key keys[] = {
+static const Key keys[] = {
     /* modifier                     key        function        argument */
     STACKKEYS(MODKEY,         focus)
     STACKKEYS(MODKEY | ShiftMask, push)
@@ -221,7 +223,8 @@ static Key keys[] = {
     { MODKEY,             XK_h,          setmfact,        { .f  = -0.05 } },
     /* J and K are automatically bound above in STACKEYS */
     { MODKEY,             XK_l,          setmfact,        { .f  = +0.05 } },
-    { MODKEY,             XK_semicolon,  shiftview,       { .i  = 1 } },
+    { MODKEY,             XK_semicolon,  spawn,           { .v = (const char*[]) { "dt", "-x", NULL } } },
+    // { MODKEY,             XK_semicolon,  shiftview,       { .i  = 1 } },
     { MODKEY | ShiftMask, XK_semicolon,  shifttag,        { .i  = 1 } },
     { MODKEY,             XK_apostrophe, togglescratch,   { .ui = 1 } },
     /* { MODKEY|ShiftMask,      XK_apostrophe,  spawn,      SHCMD("") }, */
@@ -334,7 +337,7 @@ static Key keys[] = {
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] = {
+static const Button buttons[] = {
     /* click                event mask      button          function        argument */
 #ifndef __OpenBSD__
     { ClkTagBar,     MODKEY,    Button1, tag,        { 0  } },
