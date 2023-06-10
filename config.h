@@ -30,10 +30,12 @@ static char normfgcolor[] = "#bdae93";
 static char selfgcolor[] = "#ebdbb2";
 static char selbordercolor[] = "#cc241d";
 static char selbgcolor[] = "#3f6570";
-static char *colors[][3] = {
-    /*               fg           bg           border   */
-    [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-    [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor   },
+static char normfloatcolor[] = "#504945";
+static char selfloatcolor[] = "#3f6570";
+static char *colors[][4] = {
+	/*               fg         bg         border     float */
+    [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor, normfloatcolor },
+    [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor, selfloatcolor },
 };
 
 typedef struct {
@@ -64,6 +66,7 @@ static const Rule rules[] = {
     {"wemeetapp",       NULL,     NULL,           0,        1, 0, 1, -1 },
     {"Zoom",            NULL,     NULL,           0,        1, 0, 0, -1 },
     {"Gimp",            NULL,     NULL,           0,        1, 0, 0, -1 },
+    {"MEGAsync",        NULL,     NULL,           0,        1, 0, 0, -1 },
     {"MATLAB",          NULL,     NULL,           0,        1, 0, 0, -1 },
     {"ij-ImageJ",       NULL,     NULL,           0,        1, 0, 0, -1 },
     {"fiji-Main",       NULL,     NULL,           0,        1, 0, 0, -1 },
