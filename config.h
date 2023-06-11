@@ -82,6 +82,8 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
+#define ICONSIZE 22   /* icon size */
+#define ICONSPACING 5 /* space between icon and title */
 static float mfact = 0.55;      /* factor of master area size [0.05..0.95] */
 static int nmaster = 1;         /* number of clients in master area */
 static int resizehints = 0;     /* 1 means respect size hints in tiled resizals */
@@ -221,7 +223,7 @@ static const Key keys[] = {
     // { MODKEY | ShiftMask, XK_d,       spawn,      SHCMD("passmenu") },
     { MODKEY | ShiftMask, XK_d,            spawn,         { .v = (const char*[]) { "dmenu1pass",                            NULL } } },
     { MODKEY,             XK_f,            togglefullscr, { 0 } },
-    { MODKEY | ShiftMask, XK_f,            setlayout,     { .v  = &layouts[8] } },
+    { MODKEY | ShiftMask, XK_f,            setlayout,     { .v  = &layouts[8] } }, /* float */
     { MODKEY,             XK_g,            shiftview,     { .i  = -1 } },
     { MODKEY | ShiftMask, XK_g,            shifttag,      { .i  = -1 } },
     { MODKEY,             XK_h,          setmfact,        { .f  = -0.05 } },
