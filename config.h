@@ -22,14 +22,14 @@ static int swallowfloating = 0;                 /* 1 means swallow floating wind
 static int showbar = 1;                         /* 0 means no bar */
 static int topbar = 1;                          /* 0 means bottom bar */
 static char *fonts[] = { "monospace:size=12", "WenQuanYi Zen Hei Mono:size=12:type=Regular:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=22:antialias=true:autohint=true" };
-static char normbgcolor[] = "#282828";
+static char normbgcolor[]     = "#282828";
 static char normbordercolor[] = "#504945";
-static char normfgcolor[] = "#bdae93";
-static char selfgcolor[] = "#ebdbb2";
-static char selbordercolor[] = "#cc241d";
-static char selbgcolor[] = "#3f6570";
-static char normfloatcolor[] = "#504945";
-static char selfloatcolor[] = "#3f6570";
+static char normfgcolor[]     = "#bdae93";
+static char selfgcolor[]      = "#ebdbb2";
+static char selbordercolor[]  = "#cc241d";
+static char selbgcolor[]      = "#3f6570";
+static char normfloatcolor[]  = "#504945";
+static char selfloatcolor[]   = "#3f6570";
 static char *colors[][4] = {
 	/*               fg         bg         border     float */
     [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor, normfloatcolor },
@@ -82,10 +82,12 @@ static const Rule rules[] = {
 /* layout(s) */
 #define ICONSIZE 22   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
+
 static float mfact = 0.55;      /* factor of master area size [0.05..0.95] */
 static int nmaster = 1;         /* number of clients in master area */
 static int resizehints = 0;     /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+
 #define FORCE_VSPLIT 1          /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 
@@ -226,8 +228,10 @@ static const Key keys[] = {
     { MODKEY,             XK_g,            shiftview,     { .i  = -1 } },
     { MODKEY | ShiftMask, XK_g,            shifttag,      { .i  = -1 } },
     { MODKEY,             XK_h,          setmfact,        { .f  = -0.05 } },
-    /* J and K are automatically bound above in STACKEYS */
     { MODKEY,             XK_l,          setmfact,        { .f  = +0.05 } },
+	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
+	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
+    /* J and K are automatically bound above in STACKEYS */
     { MODKEY,             XK_semicolon,  spawn,           { .v = (const char*[]) { "dt", "-x",                              NULL } } },
     // { MODKEY,             XK_semicolon,  shiftview,       { .i  = 1 } },
     { MODKEY | ShiftMask, XK_semicolon,  shifttag,        { .i  = 1 } },
