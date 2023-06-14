@@ -56,27 +56,24 @@ static const Rule rules[] = {
      *  WM_CLASS(STRING) = instance, class
      *  WM_NAME(STRING) = title
      */
-    /* class    instance      title          tags mask    isfloating   isterminal  noswallow  monitor */
-    {"flameshot",       NULL,     NULL,           0,        1, 0, 1, -1 },
-    {"Espanso",         NULL,     NULL,           0,        1, 0, 1, -1 },
-    {"Ulauncher",       NULL,     NULL,           0,        1, 0, 1, -1 },
-    {"ulauncher",       NULL,     "",             0,        1, 0, 1, -1 },
-    {"wemeetapp",       NULL,     NULL,           0,        1, 0, 1, -1 },
-    {"Zoom",            NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"Gimp",            NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"MEGAsync",        NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"MATLAB",          NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"ij-ImageJ",       NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"fiji-Main",       NULL,     NULL,           0,        1, 0, 0, -1 },
-    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0, 1, 0, 1, -1 },
-    {NULL,              NULL,     "兰译",         0,        1, 0, 1, -1 },
-    {"TelegramDesktop", NULL,     NULL,           0,        1, 0, 0, -1 },
-    {"telegram-desktop",NULL,     NULL,           0,        1, 0, 0, -1 },
-    {TERMCLASS,         NULL,     NULL,           0,        0, 1, 0, -1 },
-    {TERMCLASS,         "bg",     NULL,           1 << 7,   0, 1, 0, -1 },
-    {TERMCLASS,         "spterm", NULL,           SPTAG(0), 1, 1, 0, -1 },
-    {TERMCLASS,         "spcalc", NULL,           SPTAG(1), 1, 1, 0, -1 },
-    {NULL,              NULL,     "Event Tester", 0,        0, 0, 1, -1 },
+    /* class    instance      title          tags mask   switchtotag   isfloating   isterminal  noswallow  monitor */
+    {"flameshot",       NULL,     NULL,           0,       0,  1,  0,  1,  -1 },
+    {"Espanso",         NULL,     NULL,           0,       0,  1,  0,  1,  -1 },
+    {"Zoom",            NULL,     NULL,           1 << 6,  1,  1,  0,  0,  -1 },
+    {"Gimp",            NULL,     NULL,           1 << 7,  1,  1,  0,  0,  -1 },
+    {"MEGAsync",        NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"MATLAB",          NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"ij-ImageJ",       NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"fiji-Main",       NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"TelegramDesktop", NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"telegram-desktop",NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {TERMCLASS,         NULL,     NULL,           0,       0,  0,  1,  0,  -1 },
+    {TERMCLASS,         "bg",     NULL,           1 << 7,  0,  0,  1,  0,  -1 },
+    {TERMCLASS,         "spterm", NULL,           SPTAG(0),0,  1,  1,  0,  -1 },
+    {TERMCLASS,         "spcalc", NULL,           SPTAG(1),0,  1,  1,  0,  -1 },
+    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0,  1,  0,  1,  -1 },
+    {NULL,              NULL,     "兰译",         0,       0,  1,  0,  1,  -1 },
+    {NULL,              NULL,     "Event Tester", 0,       0,  0,  0,  1,  -1 },
 };
 
 /* layout(s) */
