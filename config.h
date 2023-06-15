@@ -26,8 +26,8 @@ static char normbgcolor[]     = "#282828";
 static char normbordercolor[] = "#504945";
 static char normfgcolor[]     = "#bdae93";
 static char selfgcolor[]      = "#ebdbb2";
-// static char selbordercolor[]  = "#cc241d";
-static char selbordercolor[]  = "#89B482";
+static char selbordercolor[]  = "#cc241d";
+// static char selbordercolor[]  = "#89B482";
 static char selbgcolor[]      = "#3f6570";
 static char normfloatcolor[]  = "#504945";
 static char selfloatcolor[]   = "#3f6570";
@@ -68,11 +68,12 @@ static const Rule rules[] = {
     {"fiji-Main",       NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
     {"TelegramDesktop", NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
     {"telegram-desktop",NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"QQ",              NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
     {TERMCLASS,         NULL,     NULL,           0,       0,  0,  1,  0,  -1 },
     {TERMCLASS,         "bg",     NULL,           1 << 7,  0,  0,  1,  0,  -1 },
     {TERMCLASS,         "spterm", NULL,           SPTAG(0),0,  1,  1,  0,  -1 },
     {TERMCLASS,         "spcalc", NULL,           SPTAG(1),0,  1,  1,  0,  -1 },
-    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0,  1,  0,  1,  -1 },
+    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0, 0, 1, 0, 1, -1 },
     {NULL,              NULL,     "兰译",         0,       0,  1,  0,  1,  -1 },
     {NULL,              NULL,     "Event Tester", 0,       0,  0,  0,  1,  -1 },
 };
