@@ -223,8 +223,8 @@ static const Key keys[] = {
     { MODKEY,             XK_d,            spawn,         { .v = (const char*[]) { "dmenu_run",                             NULL } } },
     // { MODKEY | ShiftMask, XK_d,       spawn,      SHCMD("passmenu") },
     { MODKEY | ShiftMask, XK_d,            spawn,         { .v = (const char*[]) { "dmenu1pass",                            NULL } } },
-    { MODKEY,             XK_f,            togglefullscr, { 0 } },
-    { MODKEY | ShiftMask, XK_f,            setlayout,     { .v  = &layouts[8] } }, /* float */
+	{ MODKEY,             XK_f,            togglefullscreen, {0} },
+	{ MODKEY|ShiftMask,   XK_f,            togglefakefullscreen, {0} },
     { MODKEY,             XK_g,            shiftview,     { .i  = -1 } },
     { MODKEY | ShiftMask, XK_g,            shifttag,      { .i  = -1 } },
     { MODKEY,             XK_h,          setmfact,        { .f  = -0.05 } },
