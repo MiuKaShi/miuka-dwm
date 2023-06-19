@@ -130,6 +130,7 @@ static const Layout layouts[] = {
 /* commands */
 // static const char *termcmd[] = { "at", NULL };
 static const char *termcmd[] = { TERMINAL, NULL };
+static const char *layoutmenu_cmd = "layoutmenu";
 
 /*
  * Xresources preferences to load at startup
@@ -365,6 +366,7 @@ static const Button buttons[] = {
 #ifndef __OpenBSD__
     { ClkTagBar,     MODKEY,    Button1, tag,        { 0  } },
     { ClkTagBar,     MODKEY,    Button3, toggletag,    { 0  } },
+	{ ClkLtSymbol,   0,         Button3, layoutmenu,   {0} },
     { ClkWinTitle,   0,         Button2, zoom,         { 0  } },
     { ClkStatusText, 0,         Button1, sigdwmblocks, { .i = 1} },
     { ClkStatusText, 0,         Button2, sigdwmblocks, { .i = 2} },
