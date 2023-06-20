@@ -2,7 +2,7 @@
 
 My personal patched dwm
 
-![screen](https://tri-1251426408.cos.ap-tokyo.myqcloud.com/20230620211922496088.jpg)
+![screen](./picture/screen.png)
 
 ## Patch List
 
