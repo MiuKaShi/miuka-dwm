@@ -129,6 +129,7 @@ static const Layout layouts[] = {
 
 /* commands */
 // static const char *termcmd[] = { "at", NULL };
+// static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[] = { TERMINAL, NULL };
 static const char *layoutmenu_cmd = "layoutmenu";
 
@@ -279,7 +280,7 @@ static const Key keys[] = {
     { MODKEY,             XK_F2,      spawn,      {.v = (const char*[]) { "lpic", "-c",                                     NULL }} },
     { MODKEY,             XK_F3,      spawn,      {.v = (const char*[]) { "displayselect",                                  NULL } } },
     { MODKEY,             XK_F4,      spawn,      SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
-    /* { MODKEY,            XK_F5,      xrdb,       {.v =                                                                   NULL } }, */
+	{ MODKEY,             XK_F5,      xrdb,       {.v = NULL } },
     { MODKEY,             XK_F6,      spawn,      {.v = (const char*[]) { "torwrap",                                        NULL } } },
     { MODKEY,             XK_F7,      spawn,      {.v = (const char*[]) { "td-toggle",                                      NULL } } },
 	{ MODKEY,			XK_F8,		spawn,		  {.v = (const char*[]){ "mailsync",                                                           NULL } } },
