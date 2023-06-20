@@ -2,6 +2,10 @@
 
 My personal patched dwm
 
+## Version
+
+Based on dwm-6.4
+
 ![screen](./picture/screen.png)
 
 ## Patch List
@@ -43,7 +47,7 @@ If you are not, the name may be different.
 build and install：
 
 ```
-git@github.com:MiuKaShi/miuka-dwm.git
+git clone https://github.com/MiuKaShi/miuka-dwm.git
 cd miuka-dwm
 make
 sudo make clean install
