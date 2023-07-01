@@ -12,7 +12,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray = 1;               /* 0 means no systray */
+static const int showsystray = 0;               /* 0 means no systray */
 static unsigned int gappih = 20;                /* horiz inner gap between windows */
 static unsigned int gappiv = 20;                /* vert inner gap between windows */
 static unsigned int gappoh = 20;                /* horiz outer gap between windows and screen edge */
@@ -60,9 +60,11 @@ static const Rule rules[] = {
     /* class    instance      title          tags mask   switchtotag   isfloating   isterminal  noswallow  monitor */
     {"flameshot",       NULL,     NULL,           0,       0,  1,  0,  1,  -1 },
     {"Espanso",         NULL,     NULL,           0,       0,  1,  0,  1,  -1 },
+    {"stalonetray",     NULL,     NULL,           0,       0,  1,  0,  1,  -1 },
     {"Zoom",            NULL,     NULL,           1 << 6,  1,  1,  0,  0,  -1 },
     {"Gimp",            NULL,     NULL,           1 << 7,  1,  1,  0,  0,  -1 },
     {"MEGAsync",        NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
+    {"recoll",          NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
     {"MATLAB",          NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
     {"ij-ImageJ",       NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
     {"fiji-Main",       NULL,     NULL,           0,       0,  1,  0,  0,  -1 },
@@ -213,7 +215,8 @@ static const Key keys[] = {
     { MODKEY | ShiftMask, XK_bracketleft,  spawn,      { .v = (const char*[]) { "sptf", "like",                             NULL }} },
     { MODKEY,             XK_bracketright, spawn,      { .v = (const char*[]) { "sptf", "n",                                NULL }} },
     { MODKEY | ShiftMask, XK_bracketright, spawn,      { .v = (const char*[]) { "sptf", "dislike",                          NULL }} },
-    { MODKEY,             XK_backslash,    view,       { 0 } },
+    // { MODKEY,             XK_backslash,    view,       { 0 } },
+    { MODKEY,             XK_backslash,    spawn,      { .v = (const char*[]) { "stalonetray-toggle",                       NULL } } },
     { MODKEY | ShiftMask, XK_backslash,    spawn,      SHCMD("remaps & notify-send \\\"Keyboard remapping...\\\"") },
     { MODKEY,             XK_slash,        spawn,      { .v = (const char*[]) { "rofi-zotero",                              NULL } } },
     /* { MODKEY|ShiftMask,      XK_backslash,       spawn,      SHCMD("") }, */
