@@ -21,6 +21,8 @@ static int smartgaps = 0;                       /* 1 means no outer gap when the
 static int swallowfloating = 0;                 /* 1 means swallow floating windows by default */
 static int showbar = 1;                         /* 0 means no bar */
 static int topbar = 1;                          /* 0 means bottom bar */
+static int horizpadbar        = 2;        /* horizontal padding for statusbar */
+static int vertpadbar         = 0;        /* vertical padding for statusbar */
 static char *fonts[] = { "monospace:size=12", "WenQuanYi Zen Hei Mono:size=12:type=Regular:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=22:antialias=true:autohint=true" };
 static char normbgcolor[]     = "#282828";
 static char normbordercolor[] = "#504945";

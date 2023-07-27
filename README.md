@@ -24,6 +24,7 @@ If you are not, the name may be different.
 | dwm-nextprev               | 1.0      | -                |
 | dwm-actualfullscreen       | 20211013 | -                |
 | dwm-alwayscenter           | 20200625 | -                |
+| dwm-statuspadding          | 6.3      | -                |
 | dwm-cfacts-vanitygaps      | 6.4      | -                |
 | dwm-fixborders             | 6.2      | -                |
 | dwm-float-border-color     | 6.2      | -                |
