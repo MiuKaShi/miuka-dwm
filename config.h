@@ -62,7 +62,6 @@ static const Rule rules[] = {
     /* class           instance   title      tags mask   switchtotag   isfloating   isterminal  noswallow  monitor */
     {"flameshot",       NULL,     NULL,           0,         0,            1,         0,          1,        -1 },
     {"Espanso",         NULL,     NULL,           0,         0,            1,         0,          1,        -1 },
-    {"stalonetray",     NULL,     NULL,           0,         0,            1,         0,          1,        -1 },
     {"Zoom",            NULL,     NULL,           1 << 6,    1,            1,         0,          0,        -1 },
     {"Gimp",            NULL,     NULL,           1 << 7,    1,            1,         0,          0,        -1 },
     {"MEGAsync",        NULL,     NULL,           0,         0,            1,         0,          0,        -1 },
@@ -79,7 +78,8 @@ static const Rule rules[] = {
     {TERMCLASS,         "spcalc", NULL,           SPTAG(1),  0,            1,         1,          0,        -1 },
     {NULL,              NULL,     "兰译",         0,         0,            1,         0,          1,        -1 },
     {NULL,              NULL,     "Event Tester", 0,         0,            0,         0,          1,        -1 },
-    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.8.2", 0,0, 1,      0,          1,        -1 },
+    {NULL,              NULL,     "Enter LaTeX Formula - TexText 1.9.0", 0,0, 1,      0,          1,        -1 },
+    {"stalonetray", "stalonetray", "stalonetray", 0,         0,            1,         0,          1,        -1 },
 };
 
 /* layout(s) */
@@ -251,7 +251,6 @@ static const Key keys[] = {
     { MODKEY,             XK_BackSpace,    spawn,           { .v = (const char*[]) { "sysact",                           NULL } } },
     { MODKEY | ShiftMask, XK_BackSpace,    spawn,           { .v = (const char*[]) { "sysact",                           NULL } } },
     { MODKEY | ShiftMask, XK_q,            spawn,           { .v = (const char*[]) { "sysact",                           NULL } } },
-    { MODKEY,             XK_w,            spawn,           { .v = (const char*[]) { BROWSER,                            NULL } } },
     { MODKEY | ShiftMask, XK_w,            spawn,           { .v = (const char*[]) { "iwd-dmenu",						             NULL } } },
     { MODKEY,             XK_r,            spawn,           { .v = (const char*[]) { TERMINAL, "-e", "lfub",             NULL } } },
     { MODKEY | ShiftMask, XK_r,            spawn,           { .v = (const char*[]) { TERMINAL, "-e", "htop",             NULL } } },
@@ -273,13 +272,14 @@ static const Key keys[] = {
     { MODKEY,             XK_n,            spawn,           { .v = (const char*[]) { "snote", "search",                  NULL } } },
     { MODKEY | ShiftMask, XK_n,            spawn,           { .v = (const char*[]) { "snote", "new",                     NULL } } },
     { MODKEY,             XK_m,            spawn,           { .v = (const char*[]) { TERMINAL, "-e", "ncmpcpp",          NULL } } },
-    { MODKEY | ShiftMask, XK_m,            spawn,           { .v = (const char*[]) { TERMINAL, "-e", "musicfoxd",        NULL } } },
+    { MODKEY | ShiftMask, XK_m,            spawn,           { .v = (const char*[]) { TERMINAL, "-e", "musicfox",         NULL } } },
 
     { ShiftMask,          XK_Print,        spawn,           { .v = (const char*[]) { "maimpick",                         NULL } } },
     { MODKEY,             XK_Print,        spawn,           { .v = (const char*[]) { "dmenurecord",                      NULL } } },
     { MODKEY | ShiftMask, XK_Print,        spawn,           { .v = (const char*[]) { "dmenurecord", "kill",              NULL } } },
     { MODKEY,             XK_Delete,       spawn,           { .v = (const char*[]) { "dmenurecord", "kill",              NULL } } },
-	
+
+    { MODKEY,             XK_w,            spawn,           SHCMD(BROWSER) },
 	  { MODKEY,             XK_e,            spawn,           SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
     { MODKEY | ShiftMask, XK_e,            spawn,           SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
     { MODKEY | ShiftMask, XK_backslash,    spawn,           SHCMD("remaps & notify-send \\\"Keyboard remapping...\\\"") },
