@@ -126,6 +126,7 @@ struct Client {
     unsigned int tags;
 	unsigned int switchtotag;
     int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isterminal, noswallow, issticky;    
+    int allowkill;
 	int fakefullscreen;
 	unsigned int icw, ich; Picture icon;
 	int issteam;
@@ -186,6 +187,7 @@ typedef struct {
     const char *instance;
     const char *title;
     unsigned int tags;
+    int allowkill;
 	unsigned int switchtotag;
     int isfloating;
     int isterminal;
@@ -308,6 +310,7 @@ static void tagmon(const Arg *arg);
 static void togglebar(const Arg *arg);
 static void togglefakefullscreen(const Arg *arg);
 static void togglefloating(const Arg *arg);
+static void toggleallowkill(const Arg *arg);
 static void togglefullscreen(const Arg *arg);
 static void togglescratch(const Arg *arg);
 static void togglesticky(const Arg *arg);
@@ -425,6 +428,7 @@ applyrules(Client *c)
     /* rule matching */
     c->isfloating = 0;
     c->tags = 0;
+    c->allowkill = allowkill;
     XGetClassHint(dpy, c->win, &ch);
     class    = ch.res_class ? ch.res_class : broken;
     instance = ch.res_name  ? ch.res_name  : broken;
@@ -442,6 +446,7 @@ applyrules(Client *c)
             c->isfloating = r->isfloating;
             c->noswallow  = r->noswallow;
             c->tags |= r->tags;
+            c->allowkill = r->allowkill;
             if ((r->tags & SPTAGMASK) && r->isfloating) {
                 c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
                 c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
@@ -1493,7 +1498,7 @@ fake_signal(void)
 void
 killclient(const Arg *arg)
 {
-    if (!selmon->sel)
+	if (!selmon->sel || !selmon->sel->allowkill)
         return;
 
     if (!sendevent(selmon->sel->win, wmatom[WMDelete], NoEventMask, wmatom[WMDelete], CurrentTime, 0, 0, 0)) {
@@ -2719,6 +2724,14 @@ togglefakefullscreen(const Arg *arg)
 		c->fakefullscreen = 1;
 		setfullscreen(c, 1);
 	}
+}
+
+
+void
+toggleallowkill(const Arg *arg)
+{
+    if (!selmon->sel) return;
+    selmon->sel->allowkill = !selmon->sel->allowkill;
 }
 
 void
