@@ -42,12 +42,13 @@ If you are not, the name may be different.
 | dwm-winicon                | 6.3-v2.1 | imlib2           |
 | dwm-xrdb                   | 6.4      | -                |
 | dwm-swallow                | 6.3      | libxcb xcb-util  |
+| dwm-allowkillrule          | 6.4      | -                |
 
 ## Installation
 
 build and install：
 
-```
+```sh
 git clone https://github.com/MiuKaShi/miuka-dwm.git
 cd miuka-dwm
 make
