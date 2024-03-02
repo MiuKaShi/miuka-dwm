@@ -5,7 +5,10 @@ VERSION = 6.4
 
 # paths
 PREFIX = /usr/local
+APPPREFIX = $(PREFIX)/share/applications
 MANPREFIX = ${PREFIX}/share/man
+ICONPREFIX = $(PREFIX)/share/pixmaps
+ICONNAME = dwm.png
 
 X11INC = /usr/X11R6/include
 X11LIB = /usr/X11R6/lib

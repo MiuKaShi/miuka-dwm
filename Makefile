@@ -34,6 +34,9 @@ install: all
 	sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	mkdir -p ${DESTDIR}${PREFIX}/share/dwm
+	mkdir -p $(DESTDIR)$(ICONPREFIX)
+	cp -f dwm.desktop $(DESTDIR)$(APPPREFIX)
+	[ -f $(ICONNAME) ] && cp -f $(ICONNAME) $(DESTDIR)$(ICONPREFIX) || :
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
