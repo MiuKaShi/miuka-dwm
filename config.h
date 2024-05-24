@@ -56,10 +56,10 @@ static Sp scratchpads[] = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-    /* xprop(1):
-     *  WM_CLASS(STRING) = instance, class
-     *  WM_NAME(STRING) = title
-     */
+    	/* xprop(1):
+     	 *  WM_CLASS(STRING) = instance, class
+     	 *  WM_NAME(STRING) = title
+     	 */
     /* class           instance   title      tags mask		allowkill		switchtotag   isfloating   isterminal  noswallow  monitor */
     {"flameshot",       NULL,     NULL,           0,        0,        0,            1,            0,          1,        -1 },
     {"Espanso",         NULL,     NULL,           0,        0,        0,            1,            0,          1,        -1 },
@@ -72,6 +72,11 @@ static const Rule rules[] = {
     {"fiji-Main",       NULL,     NULL,           0,        1,        0,            1,            0,          0,        -1 },
     {"TelegramDesktop", NULL,     NULL,           0,        1,        0,            1,            0,          0,        -1 },
     {"stalonetray", "stalonetray", "stalonetray", 0,        0,        0,            1,            0,          1,        -1 },
+    {"steam_app_",			NULL,			NULL,					  0,				0,        0,            1,            0,          1,        -1 },
+    {"steam", "steamwebhelper", "Steam Games List", 0,      0,        0,            1,            0,          1,        -1 },
+    {"steam", "steamwebhelper",   NULL,						0,        0,        0,            1,            0,          1,        -1 },
+    {"steam",						NULL,   "Special Offers", 0,        0,        0,            1,            0,          1,        -1 },
+    {"steam",						NULL,   "Friends List",   0,        0,        0,            1,            0,          1,        -1 },
     {TERMCLASS,         NULL,     NULL,           0,        1,        0,            0,            1,          0,        -1 },
     {TERMCLASS,         "bg",     NULL,           1 << 7,   1,        0,            0,            1,          0,        -1 },
     {TERMCLASS,         "spterm", NULL,           SPTAG(0), 1,        0,            1,            1,          0,        -1 },
