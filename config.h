@@ -61,6 +61,7 @@ static const Rule rules[] = {
      	 *  WM_NAME(STRING) = title
      	 */
     /* class           instance   title      tags mask		allowkill		switchtotag   isfloating   isterminal  noswallow  monitor */
+    {"Zathura",         NULL,     NULL,           0,        0,        0,            1,            0,          1,        -1 },
     {"flameshot",       NULL,     NULL,           0,        0,        0,            1,            0,          1,        -1 },
     {"Espanso",         NULL,     NULL,           0,        0,        0,            1,            0,          1,        -1 },
     {"Zoom",            NULL,     NULL,           1 << 6,   0,        1,            1,            0,          0,        -1 },
