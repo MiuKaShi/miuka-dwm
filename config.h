@@ -78,6 +78,7 @@ static const Rule rules[] = {
     {"steam",            "steamwebhelper", NULL,      0,        0,        0,            1,            0,          1,        -1 },
     {"steam",            NULL,     "Special Offers",  0,        0,        0,            1,            0,          1,        -1 },
     {"steam",            NULL,     "Friends List",    0,        0,        0,            1,            0,          1,        -1 },
+    {"Zotero",           "Alert",  NULL,              0,        0,        0,            1,            0,          1,        -1 },
     {TERMCLASS,          NULL,     NULL,              0,        1,        0,            0,            1,          0,        -1 },
     {TERMCLASS,          "bg",     NULL,              1 << 7,   1,        0,            0,            1,          0,        -1 },
     {TERMCLASS,          "spterm", NULL,              SPTAG(0), 1,        0,            1,            1,          0,        -1 },
