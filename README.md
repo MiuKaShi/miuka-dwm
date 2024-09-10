@@ -4,7 +4,7 @@ My personal patched dwm
 
 ## Version
 
-Based on dwm-6.4
+Based on dwm-6.5
 
 ![screen](./picture/screen.png)
 
