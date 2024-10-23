@@ -30,6 +30,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdint.h>
+#include <spawn.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <X11/cursorfont.h>
@@ -2723,16 +2724,12 @@ solitary(Client *c)
 	    && NULL != c->mon->lt[c->mon->sellt]->arrange;
 }
 
+extern char **environ;
+
 void
 spawn(const Arg *arg)
 {
-    if (fork() == 0) {
-        if (dpy)
-            close(ConnectionNumber(dpy));
-        setsid();
-        execvp(((char **)arg->v)[0], (char **)arg->v);
-		die("dwm: execvp '%s' failed:", ((char **)arg->v)[0]);
-    }
+    posix_spawnp(NULL, ((char **)arg->v)[0], NULL, NULL, (char **)arg->v, environ);
 }
 
 void
