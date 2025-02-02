@@ -24,7 +24,7 @@ static int showbar = 1;                         /* 0 means no bar */
 static int topbar = 1;                          /* 0 means bottom bar */
 static int horizpadbar        = 2;        /* horizontal padding for statusbar */
 static int vertpadbar         = 0;        /* vertical padding for statusbar */
-static char *fonts[] = { "monospace:size=12", "WenQuanYi Zen Hei Mono:size=12:type=Regular:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=22:antialias=true:autohint=true" };
+static char *fonts[] = { "monospace:size=12", "WenQuanYi Zen Hei Mono:size=12:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=22:antialias=true:autohint=true" };
 static char normbgcolor[]     = "#282828";
 static char normbordercolor[] = "#504945";
 static char normfgcolor[]     = "#bdae93";
@@ -70,6 +70,7 @@ static const Rule rules[] = {
     {"recoll",           NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"MATLAB",           NULL,     NULL,              0,        0,        0,            1,            0,          0,        -1 },
     {"ij-ImageJ",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
+    {"gui-twod-ChemDoodleLauncher", NULL,     NULL,   0,        1,        0,            1,            0,          0,        -1 },
     {"fiji-Main",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"TelegramDesktop",  NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"stalonetray",      "stalonetray", "stalonetray",0,        0,        0,            1,            0,          1,        -1 },
