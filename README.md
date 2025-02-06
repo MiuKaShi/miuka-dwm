@@ -20,6 +20,8 @@ If you are not, the name may be different.
 | dwm-alwayscenter           | 20200625 | -                |
 | dwm-allowkillrule          | 6.4      | -                |
 | dwm-aspectresize           | 6.2      | -                |
+| dwm-bottomstack            | 20160719 | -                |
+| dwm-centeredmaster         | 20160719 | -                |
 | dwm-cfacts-vanitygaps      | 6.4      | -                |
 | dwm-dwmc                   | 6.2      | xorg-xsetroot    |
 | dwm-fixborders             | 6.2      | -                |

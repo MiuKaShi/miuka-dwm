@@ -192,6 +192,16 @@ static const Key keys[] = {
     TAGKEYS(XK_8,             7)
     TAGKEYS(XK_9,             8)
     // V is automatically bound above in STACKKEYS
+    // layout
+    { MODKEY,                              XK_t,            setlayout,                   { .v  = &layouts[0] } }, /* tile */
+    { MODKEY|ShiftMask,                    XK_t,            setlayout,                   { .v  = &layouts[1] } }, /* bstack */
+    { MODKEY,                              XK_y,            setlayout,                   { .v  = &layouts[2] } }, /* spiral */
+    { MODKEY|ShiftMask,                    XK_y,            setlayout,                   { .v  = &layouts[3] } }, /* dwindle */
+    { MODKEY,                              XK_u,            setlayout,                   { .v  = &layouts[4] } }, /* deck */
+    { MODKEY|ShiftMask,                    XK_u,            setlayout,                   { .v  = &layouts[5] } }, /* monocle */
+    { MODKEY,                              XK_i,            setlayout,                   { .v  = &layouts[6] } }, /* centeredmaster */
+    { MODKEY|ShiftMask,                    XK_i,            setlayout,                   { .v  = &layouts[7] } }, /* centeredfloatingmaster */
+    // shortcuts
     { MODKEY,                              XK_a,            togglegaps,                  { 0 } },
     { MODKEY|ShiftMask,                    XK_a,            defaultgaps,                 { 0 } },
     { MODKEY,                              XK_b,            togglebar,                   { 0 } },
@@ -208,8 +218,6 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                    XK_g,            shifttag,                    { .i  = -1 } },
     { MODKEY,                              XK_h,            setmfact,                    { .f  = -0.05 } },
     { MODKEY|ShiftMask,                    XK_h,            setcfact,                    { .f  = +0.25 } },
-    { MODKEY,                              XK_i,            setlayout,                   { .v  = &layouts[6] } }, /* centeredmaster */
-    { MODKEY|ShiftMask,                    XK_i,            setlayout,                   { .v  = &layouts[7] } }, /* centeredfloatingmaster */
     { MODKEY|ControlMask,                  XK_j,            pushdown,                    { 0 } },
     { MODKEY|ControlMask,                  XK_k,            pushup,                      { 0 } },
     { MODKEY,                              XK_l,            setmfact,                    { .f  = +0.05 } },
@@ -228,16 +236,10 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                    XK_r,            spawn,                       { .v = (const char*[]) { TERMINAL, "-e", "htop", NULL } } },
     { MODKEY,                              XK_s,            togglesticky,                { 0 } },
     { MODKEY|ShiftMask,                    XK_s,            spawn,                       { .v = (const char*[]) { "mathpix", NULL } } },
-    { MODKEY,                              XK_t,            setlayout,                   { .v  = &layouts[0] } }, /* tile */
-    { MODKEY|ShiftMask,                    XK_t,            setlayout,                   { .v  = &layouts[1] } }, /* bstack */
-    { MODKEY,                              XK_u,            setlayout,                   { .v  = &layouts[4] } }, /* deck */
-    { MODKEY|ShiftMask,                    XK_u,            setlayout,                   { .v  = &layouts[5] } }, /* monocle */
     { MODKEY|ShiftMask,                    XK_v,            spawn,                       { .v = (const char*[]) { "extravid", NULL } } },
     { MODKEY,                              XK_w,            spawn,                       SHCMD(BROWSER) },
     { MODKEY|ShiftMask,                    XK_w,            spawn,                       { .v = (const char*[]) { "iwd-dmenu", NULL } } },
     { MODKEY,                              XK_x,            incrgaps,                    { .i  = -3 } },
-    { MODKEY,                              XK_y,            setlayout,                   { .v  = &layouts[2] } }, /* spiral */
-    { MODKEY|ShiftMask,                    XK_y,            setlayout,                   { .v  = &layouts[3] } }, /* dwindle */
     { MODKEY,                              XK_z,            incrgaps,                    { .i  = +3 } },
     { MODKEY|ShiftMask,                    XK_z,            spawn,                       { .v = (const char*[]) { "dmenupaper", NULL } } },
 
