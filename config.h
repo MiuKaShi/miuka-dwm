@@ -97,6 +97,7 @@ static const Rule rules[] = {
 static float mfact = 0.55;      /* factor of master area size [0.05..0.95] */
 static int nmaster = 1;         /* number of clients in master area */
 static int resizehints = 0;     /* 1 means respect size hints in tiled resizals */
+static int attachbelow = 0;    /* 1 means attach after the currently active window */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 #define FORCE_VSPLIT 1          /* nrowgrid layout: force two clients to always split vertically */
@@ -296,6 +297,7 @@ static const Key keys[] = {
     { 0,                                   XK_Print,        spawn,                       SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 
     { MODKEY,                              XK_Tab,          view,                        { 0 } },
+    { MODKEY|ShiftMask,                    XK_Tab,          toggleAttachBelow,           { 0 } },
     { MODKEY,                              XK_slash,        spawn,                       { .v = (const char*[]) { "rofi-zotero", NULL } } },
     { MODKEY,                              XK_Delete,       spawn,                       { .v = (const char*[]) { "dmenurecord", "kill", NULL } } },
     { MODKEY,                              XK_Scroll_Lock,  spawn,                       SHCMD("killall screenkey || screenkey &") },
