@@ -69,6 +69,7 @@ static const Rule rules[] = {
     {"MEGAsync",         NULL,     NULL,              0,        0,        0,            1,            0,          0,        -1 },
     {"recoll",           NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"MATLAB",           NULL,     NULL,              0,        0,        0,            1,            0,          0,        -1 },
+    {"Spyder",           NULL,     NULL,              0,        0,        0,            1,            0,          0,        -1 },
     {"ij-ImageJ",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"gui-twod-ChemDoodleLauncher", NULL,     NULL,   0,        1,        0,            1,            0,          0,        -1 },
     {"fiji-Main",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
@@ -98,7 +99,7 @@ static float mfact = 0.55;      /* factor of master area size [0.05..0.95] */
 static int nmaster = 1;         /* number of clients in master area */
 static int resizehints = 0;     /* 1 means respect size hints in tiled resizals */
 static int attachbelow = 0;    /* 1 means attach after the currently active window */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+//static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
 #define FORCE_VSPLIT 1          /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
@@ -211,7 +212,7 @@ static const Key keys[] = {
     { MODKEY,                              XK_c,            spawn,                       { .v = (const char*[]) { "clipmenu", NULL } } },
     { MODKEY|ShiftMask,                    XK_c,            spawn,                       { .v = (const char*[]) { "keym", NULL } } },
     { MODKEY,                              XK_d,            spawn,                       { .v = (const char*[]) { "dmenu_run", NULL } } },
-    { MODKEY|ShiftMask,                    XK_d,            spawn,                       { .v = (const char*[]) { "dmenu1pass", NULL } } },
+    { MODKEY|ShiftMask,                    XK_d,            spawn,                       { .v = (const char*[]) { "dmenudoc", NULL } } },
     { MODKEY,                              XK_e,            spawn,                       SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
     { MODKEY|ShiftMask,                    XK_e,            spawn,                       SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
     { MODKEY,                              XK_f,            togglefullscreen,            { 0 } },
@@ -382,7 +383,17 @@ static const Button buttons[] = {
     { ClkStatusText, ShiftMask, Button1,          sigdwmblocks, { .i = 6} },
 #endif
     { ClkStatusText, ShiftMask, Button3,          spawn,        SHCMD(TERMINAL " -e nvim ~/.local/src/dwmblocks/config.h") },
-    { ClkClientWin,  MODKEY,    Button1,          movemouse,    { 0  } },
+	/* placemouse options, choose which feels more natural:
+	 *    0 - tiled position is relative to mouse cursor
+	 *    1 - tiled postiion is relative to window center
+	 *    2 - mouse pointer warps to window center
+	 *
+	 * The moveorplace uses movemouse or placemouse depending on the floating state
+	 * of the selected client. Set up individual keybindings for the two if you want
+	 * to control these separately (i.e. to retain the feature to move a tiled window
+	 * into a floating position).
+	 */
+	{ ClkClientWin,  MODKEY,    Button1,          moveorplace,    {.i = 1} },
     { ClkClientWin,  MODKEY,    Button2,          defaultgaps,  { 0  } },
     { ClkClientWin,  MODKEY,    Button3,          resizemouse,  { 0  } },
     { ClkClientWin,  MODKEY,    Button4,          incrgaps,     { .i = +1} },

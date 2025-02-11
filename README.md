@@ -36,7 +36,9 @@ If you are not, the name may be different.
 | dwm-pertag                 | 6.2      | -                |
 | dwm-preserveonrestart      | 6.3      | -                |
 | dwm-push_no_master         | 6.4      | -                |
+| dwm-placemouse             | 6.5      | -                |
 | dwm-restartsig             | 20180523 | -                |
+| dwm-dwm-resizecorners      | 6.5      | -                |
 | dwm-stacker                | 6.2      | -                |
 | dwm-statuscmd              | 20210405 | dwmblocks        |
 | dwm-statuspadding          | 6.3      | -                |
@@ -47,6 +49,7 @@ If you are not, the name may be different.
 | dwm-steam                  | 6.2      | -                |
 | dwm-togglefloatingcenter   | 20210807 | -                |
 | dwm-winicon                | 6.3-v2.1 | imlib2           |
+| dwm-warp                   | 6.4      |                  |
 | dwm-xrdb                   | 6.4      | -                |
 
 ## Installation

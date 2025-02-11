@@ -1,7 +1,9 @@
-diff -r -u a/dwm.c b/dwm.c
---- a/dwm.c	2019-02-02 07:55:28.000000000 -0500
-+++ b/dwm.c	2022-01-17 22:38:33.614493243 -0500
-@@ -1291,9 +1291,14 @@
+Author: Chris Noxz <chris@noxz.tech>
+
+diff -up ../dwm-6.5/dwm.c ./dwm.c
+--- ../dwm-6.5/dwm.c	2024-03-19 12:24:52.000000000 +0100
++++ ./dwm.c	2024-06-21 14:06:47.127064311 +0200
+@@ -1301,9 +1301,14 @@ void
  resizemouse(const Arg *arg)
  {
  	int ocx, ocy, nw, nh;
@@ -16,7 +18,7 @@ diff -r -u a/dwm.c b/dwm.c
  	Time lasttime = 0;
  
  	if (!(c = selmon->sel))
-@@ -1303,10 +1308,18 @@
+@@ -1313,10 +1318,18 @@ resizemouse(const Arg *arg)
  	restack(selmon);
  	ocx = c->x;
  	ocy = c->y;
@@ -36,21 +38,26 @@ diff -r -u a/dwm.c b/dwm.c
  	do {
  		XMaskEvent(dpy, MOUSEMASK|ExposureMask|SubstructureRedirectMask, &ev);
  		switch(ev.type) {
-@@ -1320,8 +1333,11 @@
+@@ -1330,8 +1343,16 @@ resizemouse(const Arg *arg)
  				continue;
  			lasttime = ev.xmotion.time;
  
 -			nw = MAX(ev.xmotion.x - ocx - 2 * c->bw + 1, 1);
 -			nh = MAX(ev.xmotion.y - ocy - 2 * c->bw + 1, 1);
-+			nx = horizcorner ? ev.xmotion.x : c->x;
-+			ny = vertcorner ? ev.xmotion.y : c->y;
++			nx = horizcorner && ocx2 - ev.xmotion.x >= c->minw ? ev.xmotion.x : c->x;
++			ny = vertcorner && ocy2 - ev.xmotion.y >= c->minh ? ev.xmotion.y : c->y;
 +			nw = MAX(horizcorner ? (ocx2 - nx) : (ev.xmotion.x - ocx - 2 * c->bw + 1), 1);
 +			nh = MAX(vertcorner ? (ocy2 - ny) : (ev.xmotion.y - ocy - 2 * c->bw + 1), 1);
++
++			if (horizcorner && ev.xmotion.x > ocx2)
++				nx = ocx2 - (nw = c->minw);
++			if (vertcorner && ev.xmotion.y > ocy2)
++				ny = ocy2 - (nh = c->minh);
 +
  			if (c->mon->wx + nw >= selmon->wx && c->mon->wx + nw <= selmon->wx + selmon->ww
  			&& c->mon->wy + nh >= selmon->wy && c->mon->wy + nh <= selmon->wy + selmon->wh)
  			{
-@@ -1330,11 +1346,13 @@
+@@ -1340,11 +1361,13 @@ resizemouse(const Arg *arg)
  					togglefloating(NULL);
  			}
  			if (!selmon->lt[selmon->sellt]->arrange || c->isfloating)
@@ -65,4 +72,4 @@ diff -r -u a/dwm.c b/dwm.c
 +		      vertcorner ? (-c->bw) : (c->h + c->bw - 1));
  	XUngrabPointer(dpy, CurrentTime);
  	while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
- 	if ((m = recttomon(c->x, c->y, c->w, c->h)) != selmon) {
+	if ((m = recttomon(c->x, c->y, c->w, c->h)) != selmon) {
