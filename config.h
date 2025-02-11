@@ -70,6 +70,7 @@ static const Rule rules[] = {
     {"recoll",           NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"MATLAB",           NULL,     NULL,              0,        0,        0,            1,            0,          0,        -1 },
     {"Spyder",           NULL,     NULL,              0,        0,        0,            1,            0,          0,        -1 },
+    {NULL,               NULL,     "Figure",          0,        1,        0,            1,            0,          0,        -1 },
     {"ij-ImageJ",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"gui-twod-ChemDoodleLauncher", NULL,     NULL,   0,        1,        0,            1,            0,          0,        -1 },
     {"fiji-Main",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
