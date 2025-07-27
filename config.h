@@ -73,6 +73,8 @@ static const Rule rules[] = {
     {NULL,               NULL,     "Figure",          0,        1,        0,            1,            0,          0,        -1 },
     {NULL,               NULL,     "HG_Peer_OffScreenWindow", 0,1,        0,            1,            1,          1,        -1 },
     {"ij-ImageJ",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
+    {"Gnuplot",          NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
+    {"gnuplot_qt",       NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"gui-twod-ChemDoodleLauncher", NULL,     NULL,   0,        1,        0,            1,            0,          0,        -1 },
     {"fiji-Main",        NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
     {"TelegramDesktop",  NULL,     NULL,              0,        1,        0,            1,            0,          0,        -1 },
